@@ -1,73 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pallavi - Portfolio</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        html,
-        body {
+        html, body {
             width: 100%;
             overflow-x: hidden;
         }
-
+        html {
+            scroll-behavior: smooth;
+        }
         img {
             max-width: 100%;
             height: auto;
         }
-
         .op {
             background: rgb(238, 237, 236);
         }
-
-
+        /* ===== NAVBAR ===== */
         .t {
             display: flex;
             align-items: center;
             background-color: rgb(6, 6, 79);
             width: 100%;
             padding: 15px 20px;
-
         }
-
         .t h1 {
             color: rgb(188, 201, 202);
             font-size: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
             transition: all 0.4s ease;
         }
-
         .t h2 {
             display: flex;
-            gap: 15px;
+            gap: 18px;
             font-size: 16px;
             font-weight: normal;
             margin-left: auto;
             transition: all 0.4s ease;
         }
-
         a {
             text-decoration: none;
             color: rgb(86, 186, 19);
-            transition: color 0.3s ease;
-            transform: 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
-        a::hover{
-            color: azure;
+        a:hover {
+            color: white;
             transform: scale(1.1);
         }
-
-
+        /* ===== HERO ===== */
         .u {
             display: flex;
             flex-wrap: wrap;
@@ -76,17 +63,48 @@
             gap: 20px;
             width: 100%;
         }
-
-        .u>div {
+        .u > div {
             flex: 1 1 250px;
             min-width: 0;
         }
-
         .u img {
             width: 200px;
             max-width: 100%;
         }
-
+        .dev {
+            color: brown;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 900;
+        }
+        .body {
+            padding: 15px;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        /* ===== SKILLS ===== */
+        #myskills table {
+            width: 100%;
+            border-spacing: 10px;
+        }
+        #myskills td {
+            background-color: rgb(3, 3, 130);
+            color: rgb(161, 191, 73);
+            text-align: center;
+            padding: 15px 10px;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        #myskills td:hover {
+            transform: scale(1.03);
+        }
+        #myskills p {
+            font-size: 10px;
+        }
+        b {
+            font-style: italic;
+        }
+        /* ===== PROJECTS ===== */
         .hi {
             border: 1px solid #ddd;
             background-color: rgb(192, 192, 205);
@@ -95,147 +113,76 @@
             width: 100%;
             max-width: 700px;
             margin: 10px auto;
+            transition: transform 0.3s ease;
         }
-
-        #myskills table {
+        .hi:hover {
+            transform: scale(1.02);
+        }
+        /* ===== CONTACT - Same as photo ===== */
+        #contactme {
             width: 100%;
-            border-spacing: 10px;
         }
-
-        #myskills td {
-            background-color: rgb(3, 3, 130);
-            color: rgb(161, 191, 73);
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
+        #contactme h1 {
+            text-align: left;
+            margin-bottom: 10px;
         }
-
-        #myskills p {
-            font-size: 10px;
-        }
-
-        b {
-            font-style: italic;
-        }
-
-        .dev {
-            color: brown;
-            font-family: Arial, Helvetica, sans-serif;
-            font-weight: 900;
-        }
-
-        .body {
-            padding: 15px;
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-        
-        
-#contactme {
-    width: 100%;
-}
-
-#contactme h1 {
-    text-align: left;
-    margin-bottom: 10px;
-}
-
-#me {
-    background: rgb(154, 124, 132);
-    max-width: 550px;
-    margin: 20px auto;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-    text-align: left;
-}
-
-/* Hide your <br><br> so gap becomes clean like photo */
-#me br {
-    display: none;
-}
-
-#me label {
-    display: block;
-    margin: 15px 0 6px 0;
-    font-size: 15px;
-    color: #333;
-}
-
-#me label:first-child {
-    margin-top: 0;
-}
-
-#me input, #me textarea {
-    width: 100%;
-    max-width: none;
-    padding: 12px 14px;
-    border: 1px solid #9aa8c7;
-    border-radius: 6px;
-    font-size: 15px;
-    outline: none;
-    background: white;
-    transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-#me input:focus, #me textarea:focus {
-    border-color: #69dd3b;
-    box-shadow: 0 0 0 2px rgba(68, 2, 46, 0.15);
-}
-
-#me textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-
-#me button {
-    width: 100%;
-    max-width: none;
-    margin-top: 20px;
-    background: #0b6ed3;
-    color: white;
-    border: none;
-    padding: 13px;
-    border-radius: 6px;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#me button:hover {
-    background: #095cb0;
-    transform: none;
-}
-
         #me {
-            text-align: center;
+            background: white;
+            max-width: 550px;
+            margin: 20px auto;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            text-align: left;
         }
-
-        #me input,
-        #me textarea {
+        #me br {
+            display: none;
+        }
+        #me label {
+            display: block;
+            margin: 15px 0 6px 0;
+            font-size: 15px;
+            color: #333;
+        }
+        #me label:first-child {
+            margin-top: 0;
+        }
+        #me input, #me textarea {
             width: 100%;
-            max-width: 350px;
-            padding: 8px;
+            max-width: none;
+            padding: 12px 14px;
+            border: 1px solid #9aa8c7;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+            background: white;
+            transition: border 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .back {
-            text-align: right;
-            position: fixed;
-            z-index: 1000;
-            right: 20px;
-            bottom: 5px;
+        #me input:focus, #me textarea:focus {
+            border-color: #0b6ed3;
+            box-shadow: 0 0 0 2px rgba(11,110,211,0.15);
         }
-
-        .back a {
-            background-color: #043a55;
-            color: rgb(119, 237, 9);
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
+        #me textarea {
+            min-height: 90px;
+            resize: vertical;
         }
-
+        #me button {
+            width: 100%;
+            margin-top: 20px;
+            background: #0b6ed3;
+            color: white;
+            border: none;
+            padding: 13px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        #me button:hover {
+            background: #095cb0;
+        }
+        /* ===== FOOTER ===== */
         h4 {
             text-align: center;
             padding: 10px;
@@ -243,47 +190,53 @@
             color: rgb(33, 161, 103);
             font-size: large;
         }
-
-        html {
-            scroll-behavior: smooth;
+        .back {
+            text-align: right;
+            position: fixed;
+            z-index: 1000;
+            right: 20px;
+            bottom: 5px;
         }
-
-
-        @media screen and (max-width: 600px) and (min-width:300px) {
-            div {
-                background-color: khaki;
+        .back a {
+            background-color: #043a55;
+            color: rgb(119, 237, 9);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        /* ===== MOBILE ===== */
+        @media screen and (max-width: 600px) {
+            .t {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .t h2 {
+                margin-left: 0;
+                width: 100%;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+            .u {
+                flex-direction: column;
+                text-align: center;
+            }
+            .u img {
+                width: 150px;
+            }
+            #myskills table, #myskills tr, #myskills td {
+                display: block;
+                width: 100%;
+            }
+            #myskills td {
+                margin-bottom: 10px;
             }
         }
-        @media screen and (max-width: 600px) {
-    .t {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .t h1 {
-        flex-direction: column; /* My Portfolio on top */
-        align-items: flex-start;
-        gap: 10px;
-    }
-    .t h2 {
-        margin-left: 0; /* Remove right push */
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        /* Transition makes it slide down smoothly */
-        transition: all 0.4s ease;
-    }
-}
-button{
-    background-color: rgb(43, 43, 98);
-    padding: 10px ;
-
-}
     </style>
 </head>
-
 <body>
     <div class="op">
-
         <div class="t">
             <h1>My Portfolio</h1>
             <h2>
@@ -295,71 +248,37 @@ button{
         </div>
         <div class="body">
             <div class="u">
-
                 <div>
-                    <h1>Hi, I am
-                        <br>
-                        <span class="dev">Full Stack Developer</span>
-                    </h1>
-
-                    <p>Building mordern web applications with MERN stack.</p>
+                    <h1>Hi, I am <br><span class="dev">Full Stack Developer</span></h1>
+                    <p>Building modern web applications with MERN stack.</p>
                 </div>
-
                 <img src="https://cdn-icons-png.flaticon.com/512/201/201634.png" width="200px">
             </div>
             <section id="aboutme">
                 <h1>About Me</h1>
-                <p>Hello! My name is pallavi, and i am currently learning web devlopement. This is my portfolio website
-                    where I
-                    showcase my passion for creating interactive and responsive web pages. I am a student at KR Mangalam
-                    University, pursuing a B.Tech degree, and i am deeply interested in technology and coding. i love
-                    exploring
-                    new skilla every day, and I always aim to impove my knowledge in the field of web development. With
-                    a
-                    harworking and consisting mindset, i am determined to grow as a developer and build creative
-                    projects
-                    that
-                    make a real impact. </p>
+                <p>Hello! My name is Pallavi, and I am currently learning web development. This is my portfolio website where I showcase my passion for creating interactive and responsive web pages. I am a student at KR Mangalam University, pursuing a B.Tech degree, and I am deeply interested in technology and coding. I love exploring new skills every day, and I always aim to improve my knowledge in the field of web development. With a hardworking and consistent mindset, I am determined to grow as a developer and build creative projects that make a real impact.</p>
             </section>
             <br><br>
             <section id="myskills">
                 <h1>My Skills</h1>
                 <br>
-                <div>
-                    <table>
-
-                        <th>
-                        <td><b>HTML</b> <br>
-                            <p>Beginner</p>
-                        </td>
-                        </th>
-
-
-                        <th>
-                        <td><b>CSS</b><br>
-                            <p>Beginner</p>
-                        </td>
-                        </th>
-
-                        <th>
-                        <td><b>Javascript</b> <br>
-                            <p>Beginner</p>
-                        </td>
-                        </th>
-
-                    </table>
-                </div>
+                <table>
+                    <tr>
+                        <td><b>HTML</b><br><p>Beginner</p></td>
+                        <td><b>CSS</b><br><p>Beginner</p></td>
+                        <td><b>Javascript</b><br><p>Beginner</p></td>
+                    </tr>
+                </table>
             </section>
             <br><br>
             <section id="myproject">
-
                 <h1>My Projects</h1>
                 <div class="hi">
                     <h3>Project 1</h3>
-                    <p>A simple HTML & CSS webpage </p>
+                    <p>A simple HTML & CSS webpage</p>
                 </div>
                 <div class="hi">
-                    <h3>project 2</h3>
+                    <h3>Project 2</h3>
                     <p>Another awesome mini project.</p>
                 </div>
             </section>
@@ -376,13 +295,15 @@ button{
                     <label for="message">Message:</label>
                     <textarea name="message" id="message" placeholder="Enter your message"></textarea>
                     <br><br>
-                    <button>send</button>
+                    <button>Send</button>
+                </div>
             </section>
-
             <h4><b>2025 Pallavi. All rights reserved.</b></h4>
             <p class="back"><a href="#top">back to top</a></p>
         </div>
     </div>
 </body>
-
 </html>
+
+
+
